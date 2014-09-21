@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+
+	<body>
+		<div id="inputs" class="clearfix">
+		  <input type="file" id="files" name="files[]" multiple="">
+		</div>
+		<canvas id="myChart" width="400" height="400"></canvas>
+	</body>
+	<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js'></script>
+	<script src="http://jquery-csv.googlecode.com/git/src/jquery.csv.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/Chart.js/0.2.0/Chart.min.js"></script>		
+	<script type="text/javascript" src='js/read_file.js'></script>
+	<script type="text/javascript" src='js/chartPlot.js'></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+		  if(ReadFile.isAPIAvailable()) {
+		    $('#files').bind('change', handleFileSelect);
+		  }
+		});
+
+		function handleFileSelect(evt){
+      var files = evt.target.files;
+      var file = files[0];
+      ReadFile.dataParse(file);
+    }
+	</script>
+</html>

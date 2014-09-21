@@ -1,0 +1,7 @@
+*npm-debug.log
+
+
+## Ignore folders ##
+
+*node_modules/
+.DS_Store
