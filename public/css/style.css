@@ -2,3 +2,19 @@
 	top: 100px;
 	position: absolute;
 }
+
+#dropdown1{
+	display: none;
+	top: 50px;
+	position: absolute;
+	height: 10px;
+	width: 100px;
+}
+
+#dropdown2{
+	display: none;
+	top: 50px;
+	position: absolute;
+	height: 10px;
+	width: 100px;
+}
