@@ -1,20 +1,19 @@
 #myChart{
+	top: 170px;
+	position: absolute;
+}
+
+#dropdown1, #dropdown2{
+	top: 50px;
+	height: 10px;
+	width: 100px;
+	float: left;
+	margin: 10px;
+}
+
+.list{
+	display: none;
+	float: left;
 	top: 100px;
 	position: absolute;
-}
-
-#dropdown1{
-	display: none;
-	top: 50px;
-	position: absolute;
-	height: 10px;
-	width: 100px;
-}
-
-#dropdown2{
-	display: none;
-	top: 50px;
-	position: absolute;
-	height: 10px;
-	width: 100px;
 }

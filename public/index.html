@@ -9,9 +9,13 @@
 		  <input type="file" id="files" name="files[]" multiple="">
 		</div>
 
-
-		<select id="dropdown1"></select>
-		<select id="dropdown2"></select>
+		<div class="list">
+			<label>Select Values for graph</label><br>
+			<select id="dropdown1"></select>
+			<select id="dropdown2"></select>	
+			<button type="submit" class="btn">Submit</button>
+		</div>
+		
 		<canvas id="myChart" width="400" height="400"></canvas>
 	</body>
 	<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js'></script>
@@ -24,6 +28,16 @@
 		  if(ReadFile.isAPIAvailable()) {
 		    $('#files').bind('change', handleFileSelect);
 		  }
+		  $(".btn").on("click", function() {
+		  	var val1 = document.getElementById("dropdown1").value;
+		  	var val2 = document.getElementById("dropdown1").value;
+		  	if(val1 == val2){
+		  		alert('choose different values')
+		  	} else{
+		  		ChartPlot.graphPlot(val1,val2);	
+		  	}
+		  	
+			});
 		});
 
 		function handleFileSelect(evt){

@@ -4,7 +4,7 @@
     create:function(dataString){
       var dataParsed = JSON.parse(dataString);
 
-      var dataConverted = {};
+      dataConverted = {};
       var ithData;
 
       var dropdown1 = document.getElementById("dropdown1");
@@ -23,18 +23,17 @@
             opt.text = paramName;
             opt.value = paramName;
             dropdown1.options.add(opt);
-            dropdown2.options.add(opt);
+            dropdown2.options.add($(opt).clone()[0]);
           }
         }
       }
-      dropdown1.style.display = 'block';
-      dropdown2.style.display = 'block';
+      $('.list').show();
     },
 
     graphPlot:function(value1,value2){
       var data = {
-        labels: value1,
-        labels: dataConverted["Name"],
+        // labels: value1,
+        labels: dataConverted[value1],
         datasets: [
           {
             label: "My First dataset",
@@ -42,8 +41,8 @@
             strokeColor: "rgba(220,220,220,0.8)",
             highlightFill: "rgba(220,220,220,0.75)",
             highlightStroke: "rgba(220,220,220,1)",
-            data: value2
-            // data: dataConverted["Age"]
+            // data: value2
+            data: dataConverted[value2]
           }
         ]
       };
